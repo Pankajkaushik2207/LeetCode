@@ -2,17 +2,17 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
           priority_queue<int>mh;
-        int m;
+          int m;
+          int i=0;
         
-        for(int i=0;i<arr.size();i++){
+        for(;i<arr.size();i++){
             mh.push(arr[i]);
-        }
-           int i=0;
-           for(;i<arr.size();i++){
-           if(arr[i]==mh.top()){
+            if(arr[i]==mh.top()){
               m=i;
            }
         }
+         
+         
         return m;
         
     }
