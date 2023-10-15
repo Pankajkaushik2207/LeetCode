@@ -11,15 +11,24 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        //base case, recursion ends when NULL is reached
-        if (head == NULL) return NULL;
+      if(head==nullptr) return head;
+        while(head!=nullptr && head->val==val){
+            head = head->next;
+        }
+        ListNode* curr=head;
+        ListNode* prev = head;
+        while(curr!=nullptr){
+            if(curr->val==val){
+               
+			prev->next=curr->next;
+			curr=curr->next;
 
-        //the node has to be removed -> it is skipped during the iteration
-        if (head->val == val) return removeElements(head->next, val);
-
-        //the node doesn't have to be skipped -> the rest of the list has 
-        //to be joined to the node
-        head->next = removeElements(head->next, val);
+            }
+            else{
+                prev=curr;
+                curr= curr->next;
+            }
+        }
         return head;
     }
 };
