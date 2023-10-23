@@ -1,4 +1,6 @@
 # Write your MySQL query statement below
-select x.id 
-from Weather x,Weather y 
-where x.temperature>y.temperature and datediff(x.recordDate,y.recordDate)=1;
+Select w1.id
+from Weather w1, Weather w2
+where DATEDIFF(w1.recordDate,w2.recordDate)=1 and w1.temperature>w2.temperature;
+
+
