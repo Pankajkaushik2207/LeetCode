@@ -1,11 +1,11 @@
 class Solution {
 public:
     vector<double> convertTemperature(double celsius) {
-        vector<double> ans;
-        double kelvin= celsius+273.15;
-        double far=(celsius*1.80)+32.00;
-        ans.push_back(kelvin);
-        ans.push_back(far);
-        return ans; 
-    }
+        double Kel= celsius+273.15;
+        double Fah = (celsius*1.80)+32.00;
+        vector<double>ans;
+        ans.push_back(Kel);
+        ans.push_back(Fah);
+        return ans;
+        }
 };
